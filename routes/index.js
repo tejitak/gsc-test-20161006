@@ -37,7 +37,8 @@ function sendTextMessage(sender, text) {
 }
 
 /* webhook */
-router.post('/webhook/', function (req, res) {
+router.post('/webhook', function (req, res) {
+  console.log('webhook!')
   const events = req.body.entry[0].messaging;
   for (i = 0; i < events.length; i++) {
     const event = req.body.entry[0].messaging[i];
