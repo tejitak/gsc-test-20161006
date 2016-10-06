@@ -11,8 +11,9 @@ router.get('/', function(req, res, next) {
 router.get('/webhook', function(req, res) {
   if (req.query['hub.verify_token'] === 'hoge') {
     res.send(req.query['hub.challenge']);
+  } else {
+    res.send('Error, wrong validation token');
   }
-  res.send('Error, wrong validation token');
 });
 
 const ACCESS_TOKEN = process.env.FB_ACCESS_TOKEN
