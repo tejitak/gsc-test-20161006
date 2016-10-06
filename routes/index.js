@@ -8,7 +8,7 @@ router.get('/', function(req, res, next) {
 });
 
 /* verify webhook */
-app.get('/webhook', function(req, res) {
+router.get('/webhook', function(req, res) {
   if (req.query['hub.verify_token'] === 'hoge') {
     res.send(req.query['hub.challenge']);
   }
